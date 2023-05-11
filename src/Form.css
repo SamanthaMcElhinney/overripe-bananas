@@ -1,0 +1,11 @@
+form {
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+input, button {
+  display: flex;
+  margin-right: 10px;
+}
