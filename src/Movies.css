@@ -1,0 +1,7 @@
+.movies-container {
+  height: 50vh;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 5%;
+  grid-row-gap: 7%;
+}

@@ -1,6 +1,8 @@
 import React, { Component } from "react"
 import Form from "./Form"
+import Movies from './Movies'
 import './App.css';
+import getMovieData from "./apiCalls";
 
 class App extends Component {
   constructor() {
@@ -8,6 +10,12 @@ class App extends Component {
     this.state = {
       movies: []
     }
+  }
+
+  componentDidMount() {
+    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+    .then((response) => response.json())
+    .then((data) => this.setState({movies: data.movies}))
   }
 
   render() {
@@ -20,8 +28,9 @@ class App extends Component {
         <p>🍌</p>
       </header>
       <Form />
+      <Movies movies={this.state.movies}/>
     </div>
-    // <Movies />
+    
 
     )
   }
