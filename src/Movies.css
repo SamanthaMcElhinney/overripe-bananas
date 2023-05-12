@@ -1,7 +1,12 @@
 .movies-container {
-  height: 50vh;
+  height: 50%;
+  width: 95%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-column-gap: 5%;
-  grid-row-gap: 7%;
+  gap: var(--size-3);
+  grid-auto-flow: column;
+  grid-auto-columns: 21%;
+
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
 }
+

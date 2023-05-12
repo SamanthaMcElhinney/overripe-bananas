@@ -22,7 +22,7 @@ class Form extends Component {
           value={this.state.movieTitle}
           onChange={event => this.handleChange(event)}
         />
-       <button>SEARCH</button>
+       <button className='search-button'>Find Movie</button>
       </form>
     )
   }
