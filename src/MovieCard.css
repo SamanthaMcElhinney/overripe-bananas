@@ -1,5 +1,21 @@
-img {
-  height: 150px;
-  width: 150px;
+.movie {
+  background-color: antiquewhite;
+  display: flex;
+  flex-direction: column;
+  margin:15px;
+}
 
+img {
+  height: 300px;
+  width: 100%;
+}
+
+.movie-title{
+  margin-left:5px;
+  display: flex;
+  justify-content: center;
+}
+
+.movie-release, .movie-rating{
+  padding-left:7px;
 }
