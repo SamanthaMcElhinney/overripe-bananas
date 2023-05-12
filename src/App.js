@@ -3,7 +3,9 @@ import Form from "./Form"
 import Movies from './Movies'
 import './App.css';
 import getMovieData from "./apiCalls";
+import banana from "./banana.png"
 
+console.log(banana)
 class App extends Component {
   constructor() {
     super()
@@ -20,19 +22,18 @@ class App extends Component {
 
   render() {
     return (
-    <div>
-      <header>
-        <p>🍌</p>
-        <h2 className='headerOne'>OVERRIPE</h2>
-        <h2 className='headerTwo'>BANANAS</h2>
-        <p>🍌</p>
-      </header>
-      <Form />
-      <Movies movies={this.state.movies}/>
-    </div>
-    
-
-    )
+      <div>
+        <header>
+          <img className="headerImage"src={banana} alt="logo of a banana waving"/>
+          <h1 className="headerOne">OVERRIPE</h1>
+          <h1 className="headerTwo">BANANAS</h1>
+        </header>
+        <section className="main-page">
+          <Form />
+          <Movies movies={this.state.movies} />
+        </section>
+      </div>
+    );
   }
 }
 
