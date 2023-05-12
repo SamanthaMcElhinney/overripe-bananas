@@ -1,14 +1,14 @@
 import React from 'react'
 import './MovieCard.css'
 
-const MovieCard = ({poster, title, releaseDate, rating}) => {
+const MovieCard = ({poster, title, release, rating}) => {
   return (
-    <div className='movie'>
+    <section className='movie'>
       <img src={poster} alt='movie poster'/>
-      <h2>{title}</h2>
-      <p>Release Date: {releaseDate}</p>
-      <p>🍌 {rating}</p>
-    </div>
+      <h2 className='movie-title'>{title}</h2>
+      <p>Release Date: {release}</p>
+      <p>Rating: 🍌 {rating}</p>
+    </section>
   )
 }
 
