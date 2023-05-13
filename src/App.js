@@ -44,6 +44,7 @@ class App extends Component {
         </div>
       );
     }else {
+
       console.log(this.state.individualMovie.movie.title, "title")
             return (
               <div>
