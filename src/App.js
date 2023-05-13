@@ -13,6 +13,7 @@ class App extends Component {
     this.state = {
       movies: [],
       individualMovie: null,
+      error: ''
       // individualMovieVideo: null
     }
   }
@@ -40,8 +41,17 @@ class App extends Component {
 
   componentDidMount() {
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-    .then((response) => response.json())
+    .then((response) => {
+      if(!response.ok) {
+        this.setState({error: 'server error'})
+        throw Error(response.status)
+      } else {
+        return response.json()
+      }
+    })
     .then((data) => this.setState({movies: data.movies, individualMovie: null}))
+    .catch(error => alert(`error at ${error}`))
+
   }
 
   render() {
@@ -53,6 +63,7 @@ class App extends Component {
             <h1 className="headerOne">OVERRIPE</h1>
             <h1 className="headerTwo">BANANAS</h1>
           </header>
+          {this.state.error && <p>{this.state.error}</p>}
           <section className="main-page">
             <Form />
             <Movies movies={this.state.movies} getMovieInfo = {this.getMovieInfo}/>
