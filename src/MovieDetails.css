@@ -1,15 +1,22 @@
-.background-image {
-       position: relative;
-          display: flex;
-          height: 100vh;
-          background-repeat: no-repeat;
-          background-size: cover;
-          background-position: center,
+.movie-details {
+    height: 60vh;
+    
+    display: flex;
+    flex-direction: row;
+    /* height: 100vh; */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* padding: 10, 10, 10, 10; */
+    margin-top: 20px;
+    align-items: flex-end;
+    justify-content: space-between;
+    /* overflow: scroll; */
+    
 }
 
 .ind-card {
     display:flex;
-    border:2px solid red;
     justify-content: flex-end;
     color:antiquewhite;
     z-index: 5;
@@ -18,16 +25,30 @@
 
 .ind-poster {
     display:flex;
-    height:200px;
+    height: 270px;
     width: 200px;
     opacity: .9 !important;
 }
 
-.movie-overview {
-    color:antiquewhite;
+.movie-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 270px;
+    width: 450px;
+    background-color: white;
+    color: black;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 12px;
+    margin-left: 20px;
 }
 
 .detail-list {
     list-style: none;
-    color: antiquewhite;
+    color: black;
+}
+
+.movie-title {
+    color: white;
 }
