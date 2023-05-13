@@ -1,0 +1,33 @@
+.background-image {
+       position: relative;
+          display: flex;
+          height: 100vh;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center,
+}
+
+.ind-card {
+    display:flex;
+    border:2px solid red;
+    justify-content: flex-end;
+    color:antiquewhite;
+    z-index: 5;
+
+}
+
+.ind-poster {
+    display:flex;
+    height:200px;
+    width: 200px;
+    opacity: .9 !important;
+}
+
+.movie-overview {
+    color:antiquewhite;
+}
+
+.detail-list {
+    list-style: none;
+    color: antiquewhite;
+}

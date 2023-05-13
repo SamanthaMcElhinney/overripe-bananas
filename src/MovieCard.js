@@ -1,9 +1,14 @@
 import React from 'react'
 import './MovieCard.css'
 
-const MovieCard = ({poster, title, release, rating}) => {
+const MovieCard = ({poster, title, release, rating, id, getMovieInfo}) => {
+
+  // handleClick = (event, id) => {
+  //   event.target = id
+  //   console.log(event)
+  // }
   return (
-    <div className="movie">
+    <div className="movie" id={id} onClick={(event) => getMovieInfo(id)}>
       <img className="poster-image" src={poster} alt="movie poster" />
       <div className="movie-card-info">
         <span className="movie-title">{title}</span>
@@ -11,12 +16,6 @@ const MovieCard = ({poster, title, release, rating}) => {
         <span className="movie-rating">Rating: {rating} 🍌 </span>
       </div>
     </div>
-    // <section className="movie">
-    //   <img src={poster} alt="movie poster" />
-    //   <h2 className="movie-title">{title}</h2>
-    //   <p className="movie-release">Release Date: {release}</p>
-    //   <p className="movie-rating">Rating: {rating} 🍌 </p>
-    // </section>
   );
 }
 
