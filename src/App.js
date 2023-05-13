@@ -6,26 +6,52 @@ import getMovieData from "./apiCalls";
 import banana from "./banana.png"
 import MovieDetails from "./MovieDetails";
 
+
 class App extends Component {
   constructor() {
     super()
     this.state = {
       movies: [],
-      individualMovie: null
+      individualMovie: null,
+      error: ''
+      // individualMovieVideo: null
     }
   }
 
   getMovieInfo = (id) => {
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
     .then((response) => response.json())
-    .then((data) => this.setState({individualMovie: data, movies:null}))
+    .then((data) => this.setState({individualMovie: data}))
+  }
+
+  displayHome = () => {
+    this.setState({individualMovie: null})
+    // why does this need to be an arrow function????????
   }
   //we need to pull data for an individual movie based on the id of the movie clicked to display to the page and hide all the other information.
 
+
+// getMovieTrailer = (id) => {
+//   fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}/videos`)
+//   .then((response) => response.json())
+//   .then((data) => this.setState({individualMovieVideo: data, movies:null}))
+// }
+
+
+
   componentDidMount() {
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-    .then((response) => response.json())
-    .then((data) => this.setState({movies: data.movies}))
+    .then((response) => {
+      if(!response.ok) {
+        this.setState({error: 'server error'})
+        throw Error(response.status)
+      } else {
+        return response.json()
+      }
+    })
+    .then((data) => this.setState({movies: data.movies, individualMovie: null}))
+    .catch(error => alert(`error at ${error}`))
+
   }
 
   render() {
@@ -37,29 +63,30 @@ class App extends Component {
             <h1 className="headerOne">OVERRIPE</h1>
             <h1 className="headerTwo">BANANAS</h1>
           </header>
+          {this.state.error && <p>{this.state.error}</p>}
           <section className="main-page">
             <Form />
             <Movies movies={this.state.movies} getMovieInfo = {this.getMovieInfo}/>
           </section>
         </div>
       );
-    }else {
+    } else {
 
-      console.log(this.state.individualMovie.movie.title, "title")
-            return (
-              <div>
-                <header>
-                  <img
-                    className="headerImage"
-                    src={banana}
-                    alt="logo of a banana waving"
-                  />
-                  <h1 className="headerOne">OVERRIPE</h1>
-                  <h1 className="headerTwo">BANANAS</h1>
-                </header>
-                <MovieDetails individualMovie={this.state.individualMovie}/>
-              </div>
-            );
+      return (
+        <div>
+          <header>
+            <button className="home-button" onClick={this.displayHome}>BACK HOME</button>
+            <img
+              className="headerImage"
+              src={banana}
+              alt="logo of a banana waving"
+            />
+            <h1 className="headerOne">OVERRIPE</h1>
+            <h1 className="headerTwo">BANANAS</h1>
+          </header>
+          <MovieDetails individualMovie={this.state.individualMovie}/>
+        </div>
+      );
     }
   }
 }

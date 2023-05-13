@@ -1,5 +1,6 @@
 import React from 'react'
 import MovieCard from './MovieCard'
+import PropTypes from 'prop-types'
 import './Movies.css'
 
 function Movies({ movies, getMovieInfo }) {
@@ -22,3 +23,8 @@ function Movies({ movies, getMovieInfo }) {
 
 
 export default Movies
+
+Movies.propTypes = {
+  movies: PropTypes.array,
+  getMovieInfo: PropTypes.func.isRequired
+}
