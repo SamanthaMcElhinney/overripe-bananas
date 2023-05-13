@@ -34,3 +34,10 @@ header h1{
   color:white;
 }
 
+.error-header {
+  color: #fede59;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+}
+
