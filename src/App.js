@@ -20,7 +20,12 @@ class App extends Component {
   getMovieInfo = (id) => {
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
     .then((response) => response.json())
-    .then((data) => this.setState({individualMovie: data, movies:null}))
+    .then((data) => this.setState({individualMovie: data}))
+  }
+
+  displayHome = () => {
+    this.setState({individualMovie: null})
+    // why does this need to be an arrow function????????
   }
   //we need to pull data for an individual movie based on the id of the movie clicked to display to the page and hide all the other information.
 
@@ -36,7 +41,7 @@ class App extends Component {
   componentDidMount() {
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
     .then((response) => response.json())
-    .then((data) => this.setState({movies: data.movies}))
+    .then((data) => this.setState({movies: data.movies, individualMovie: null}))
   }
 
   render() {
@@ -54,23 +59,23 @@ class App extends Component {
           </section>
         </div>
       );
-    }else {
+    } else {
 
-            return (
-              <div>
-                <header>
-                  <button className="home-button">BACK HOME</button>
-                  <img
-                    className="headerImage"
-                    src={banana}
-                    alt="logo of a banana waving"
-                  />
-                  <h1 className="headerOne">OVERRIPE</h1>
-                  <h1 className="headerTwo">BANANAS</h1>
-                </header>
-                <MovieDetails individualMovie={this.state.individualMovie}/>
-              </div>
-            );
+      return (
+        <div>
+          <header>
+            <button className="home-button" onClick={this.displayHome}>BACK HOME</button>
+            <img
+              className="headerImage"
+              src={banana}
+              alt="logo of a banana waving"
+            />
+            <h1 className="headerOne">OVERRIPE</h1>
+            <h1 className="headerTwo">BANANAS</h1>
+          </header>
+          <MovieDetails individualMovie={this.state.individualMovie}/>
+        </div>
+      );
     }
   }
 }
