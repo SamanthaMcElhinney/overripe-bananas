@@ -5,14 +5,22 @@ import './App.css';
 import getMovieData from "./apiCalls";
 import banana from "./banana.png"
 
-console.log(banana)
 class App extends Component {
   constructor() {
     super()
     this.state = {
-      movies: []
+      movies: [],
+      individualMovie: {},
     }
   }
+
+  getMovieInfo = (id) => {
+    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
+    .then((response) => response.json())
+    .then((data) => this.setState({individualMovie: data}))
+    .then(console.log(this.state.individualMovie))
+  }
+  //we need to pull data for an individual movie based on the id of the movie clicked to display to the page and hide all the other information.
 
   componentDidMount() {
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
@@ -30,7 +38,7 @@ class App extends Component {
         </header>
         <section className="main-page">
           <Form />
-          <Movies movies={this.state.movies} />
+          <Movies movies={this.state.movies} getMovieInfo = {this.getMovieInfo}/>
         </section>
       </div>
     );
