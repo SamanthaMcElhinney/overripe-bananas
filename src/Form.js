@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './Form.css'
+import click from "./click.png"
 
 class Form extends Component {
   constructor() {
@@ -16,15 +17,25 @@ class Form extends Component {
     return (
       <form>
         <input
-          type='text'
-          placeholder='Search Favorite Movie'
-          name='movieTitle'
+          type="text"
+          placeholder="Search Favorite Movie"
+          className='search'
+          role="search"
+          name="movieTitle"
           value={this.state.movieTitle}
-          onChange={event => this.handleChange(event)}
+          onChange={(event) => this.handleChange(event)}
         />
-       <button className='search-button'>Find Movie</button>
+        <button
+          className="search-button"
+          value="search-button"
+          id="search-button"
+          type="submit"
+          aria-label="Search"
+        >
+          <img className="click-img"src={click} alt="buttonpg" border="0"/>
+        </button>
       </form>
-    )
+    );
   }
 }
 
