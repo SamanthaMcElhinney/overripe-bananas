@@ -1,6 +1,5 @@
 .movie-details {
     height: 60vh;
-    
     display: flex;
     flex-direction: row;
     /* height: 100vh; */
@@ -50,5 +49,26 @@
 }
 
 .movie-title {
-    color: white;
+  color: #fede59;
+    font-weight: bolder;
+    align-items: stretch;
+    display: flex;
+    justify-content: center;
+    font-size: 1.1rem;
+    margin: 0;
+    max-width: 100%;
+    padding-top: 5px;
+}
+
+.movie-title:hover {
+    background-color: #fede59;
+    color:black;
+}
+
+.poster-image {
+    cursor:pointer;
+}
+
+.poster-image:hover {
+    transform: translateY(-10px);
 }
