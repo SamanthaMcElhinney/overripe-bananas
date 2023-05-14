@@ -10,16 +10,34 @@ input, .search-button {
   height: 5vh;
   display: flex;
   margin-right: 10px;
-  background-color:antiquewhite;
 }
 
 input {
-  width: 250px;
-  text-align: center
+  margin-top:20px;
+  border-radius: 16px;
+  outline: 0;
+  border: none;
+  padding: 0px 23px 0px;
+  font-size: 15px;
+  height: 40px;
+  color: rgb(255, 255, 255);
+  background-color:   #fede59;
 }
 
 button {
   width: 100px;
   justify-content: center;
   text-align: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.click-img {
+  margin-top:40px;
+  width:100px;
+  height:100px;
+}
+
+button:hover {
+    transform: skew(15deg, 1deg);
 }
