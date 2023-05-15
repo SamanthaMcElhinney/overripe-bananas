@@ -1,16 +1,31 @@
-.movie-details {
-    height: 60vh;
+.movie-container {
+    float: left;
+    width: 100%;
+    position: relative;
+    display: block;
+    position: relative;
+    z-index: 90;
+}
+
+.overlay {
+    background-repeat:no-repeat;
+    height: 87vh;
+    filter: grayscale(100%); 
+    background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+    z-index: 0;
+
+}
+
+.content {
     display: flex;
-    flex-direction: row;
-    /* height: 100vh; */
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    /* padding: 10, 10, 10, 10; */
-    margin-top: 20px;
-    align-items: flex-end;
-    justify-content: space-between;
-    /* overflow: scroll; */
+    justify-content: space-around;
+    position: absolute;
+    bottom:0;
+    z-index: 99;
+    left: 0;
+    padding: 40px;
 }
 
 .ind-card {
@@ -22,51 +37,27 @@
 
 .ind-poster {
     display:flex;
-    height: 270px;
-    width: 200px;
-    opacity: .9 !important;
-}
+    height: 440px;
+    width: 280px;
+} 
 
 .movie-info {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 270px;
-    width: 450px;
+    height: 400px;
+    width: 600px;
     background-color: white;
     color: black;
     align-items: center;
     flex-wrap: nowrap;
-    padding: 12px;
-    margin-left: 20px;
+    padding: 20px;
+    margin-left: 0px;
 }
 
 .detail-list {
     list-style: none;
     color: black;
-}
+} 
 
-.movie-title {
-  color: #fede59;
-    font-weight: bolder;
-    align-items: stretch;
-    display: flex;
-    justify-content: center;
-    font-size: 1.1rem;
-    margin: 0;
-    max-width: 100%;
-    padding-top: 5px;
-}
 
-.movie-title:hover {
-    background-color: #fede59;
-    color:black;
-}
-
-.poster-image {
-    cursor:pointer;
-}
-
-.poster-image:hover {
-    transform: translateY(-10px);
-}

@@ -4,6 +4,8 @@ import './MovieCard.css'
 
 const MovieCard = ({poster, title, release, rating, id, getMovieInfo}) => {
 
+
+
   const dateValue = new Date(release); // Replace with your actual date value
 
   const formattedDate = dateValue.toLocaleDateString("en-US", {
@@ -12,13 +14,15 @@ const MovieCard = ({poster, title, release, rating, id, getMovieInfo}) => {
     year: "numeric",
   });
 
+  
+
   return (
     <div className="movie" id={id} onClick={(event) => getMovieInfo(id)}>
       <img className="poster-image" src={poster} alt="movie poster" />
       <div className="movie-card-info">
         <span className="movie-title">{title}</span>
         <span className="movie-release">Release Date: {formattedDate}</span>
-        <span className="movie-rating">Rating: {rating} 🍌 </span>
+        <span className="movie-rating">Rating: {rating} 🍌</span> 
       </div>
     </div>
   );
