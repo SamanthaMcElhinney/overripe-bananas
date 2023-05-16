@@ -48,3 +48,17 @@
 .poster-image:hover {
     transform: translateY(-10px);
 }
+
+.overripe-banana {
+  height: 25px;
+  width: 25px;
+  margin-left: 10px
+}
+
+.rating-container {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: flex-start;
+    width: 117px;
+}
