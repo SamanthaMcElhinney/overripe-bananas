@@ -11,7 +11,7 @@ class App extends Component {
     super()
     this.state = {
       movies: [],
-      individualMovie: null,
+      individualMovie: {},
       error: ''
     }
   }
@@ -32,7 +32,7 @@ class App extends Component {
   }
 
   displayHome = () => {
-    this.setState({individualMovie: null})
+    this.setState({individualMovie: {}})
   }
 
 // getMovieTrailer = (id) => {
@@ -53,12 +53,12 @@ class App extends Component {
         return response.json()
       }
     })
-    .then((data) => this.setState({movies: data.movies, individualMovie: null}))
+    .then((data) => this.setState({movies: data.movies, individualMovie: {}}))
     .catch(error => alert(`error at ${error}`))
   }
 
   render() {
-    if(!this.state.individualMovie) {
+    if(Object.keys(this.state.individualMovie).length === 0) {
       return (
         <div>
           <header>
