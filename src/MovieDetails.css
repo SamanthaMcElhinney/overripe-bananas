@@ -1,3 +1,4 @@
+
 .movie-container {
     float: left;
     width: 100%;
@@ -12,8 +13,8 @@
     height: 87vh;
     filter: grayscale(100%); 
     background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
     z-index: 0;
 
 }
@@ -59,5 +60,4 @@
     list-style: none;
     color: black;
 } 
-
 
