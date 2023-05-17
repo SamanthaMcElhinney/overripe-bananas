@@ -3,9 +3,6 @@ import PropTypes from 'prop-types'
 import './MovieDetails.css'
 
 
-
-
-
 function MovieDetails({ individualMovie }) {
   return (
       <div className="movie-container">
