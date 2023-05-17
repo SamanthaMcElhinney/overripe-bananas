@@ -23,14 +23,14 @@ class App extends Component {
         this.setState({
           error: "Server error. Our deepest apologizes. We are working on it.",
         });
-        // throw Error(response.status)
       } else {
         return response.json()
       }
     })
     .then((data) => this.setState({individualMovie: data}))
+    .catch(error => {throw Error(error)})
   }
-
+  
   displayHome = () => {
     this.setState({individualMovie: null})
   }
@@ -68,6 +68,7 @@ class App extends Component {
           </header>
           {this.state.error && <p className="error-header">{this.state.error}</p>}
           <section className="main-page">
+            //component
             <Form />
             <Movies movies={this.state.movies} getMovieInfo = {this.getMovieInfo}/>
           </section>
