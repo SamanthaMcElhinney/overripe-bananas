@@ -26,7 +26,7 @@ const MovieCard = ({poster, title, release, rating, id, getMovieInfo}) => {
 
     return (
       <div className="movie" id={id} onClick={(event) => getMovieInfo(id)}>
-      <img className="poster-image" src={poster} alt="movie poster" />
+      <img className="poster-image" src={poster} alt={`${title} movie poster`}/>
       <div className="movie-card-info">
         <span className="movie-title">{title}</span>
         <span className="movie-release">Release Date: {formattedDate}</span>
