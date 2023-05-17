@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './Form.css'
-import click from "./click.png"
+// import click from "./click.png"
 
 class Form extends Component {
   constructor() {
@@ -25,7 +25,7 @@ class Form extends Component {
           value={this.state.movieTitle}
           onChange={(event) => this.handleChange(event)}
         />
-        <button
+        {/* <button
           className="search-button"
           value="search-button"
           id="search-button"
@@ -33,7 +33,7 @@ class Form extends Component {
           aria-label="Search"
         >
           <img className="click-img"src={click} alt="buttonpg" border="0"/>
-        </button>
+        </button> */}
       </form>
     );
   }
