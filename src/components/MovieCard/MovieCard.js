@@ -6,7 +6,7 @@ import ripe from "../../assets/ripe.png"
 import underripe from "../../assets/underripe.png"
 import { Link } from 'react-router-dom'
 
-const MovieCard = ({poster, title, release, rating, id, getMovieInfo}) => {
+const MovieCard = ({poster, title, release, rating, id}) => {
 
   let banana
 
@@ -27,7 +27,7 @@ const MovieCard = ({poster, title, release, rating, id, getMovieInfo}) => {
 
     return (
       <Link key={id} to={`/movies/${id}`}>
-      <div className="movie" id={id} onClick={(event) => getMovieInfo(id)}>
+      <div className="movie" id={id} >
       <img className="poster-image" src={poster} alt="movie poster" />
       <div className="movie-card-info">
         <span className="movie-title">{title}</span>

@@ -6,7 +6,9 @@ import './MovieDetails.css'
 
 
 
-function MovieDetails({ individualMovie }) {
+function MovieDetails({ individualMovie}) {
+console.log(individualMovie)
+
   return (
       <div className="movie-container">
         <div className="overlay"

@@ -13,9 +13,9 @@
 }
 
 .movies-container {
-  display: flex;
-  align-items: center;
-  direction: ltr;
+    display: flex;
+    align-items: center;
+    direction: ltr;
 }
 
 .alice-carousel__prev-btn,
@@ -30,8 +30,8 @@
 }
 
 .alice-carousel__next-btn {
-   right: 0;
-   flex-direction: row-reverse;
+    right: 0;
+    flex-direction: row-reverse;
 }
 
 .alice-carousel__prev-btn {

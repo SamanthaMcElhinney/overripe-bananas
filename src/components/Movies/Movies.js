@@ -15,9 +15,13 @@ const responsive = {
     items: 2,
   },
   1024: {
-    items: 3,
+    items: 4,
     itemsFit: "contain",
   },
+  1840: {
+    items: 6, 
+    itemsFit: "contain"
+  }
 };
 
 function Movies({ movies, getMovieInfo }) {
