@@ -13,12 +13,13 @@ class App extends Component {
     this.state = {
       movies: [],
       individualMovie: {},
+      filteredMovies: [],
+
       error: ''
     }
   }
 
   getMovieInfo = (id) => {
-    console.log('id', id)
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
     .then((response) => {
       if(!response.ok) {
@@ -31,35 +32,46 @@ class App extends Component {
       }
     })
     .then((data) => {
-      console.log('data', data)
-      this.setState({individualMovie: data})})
+      this.setState({individualMovie: data, filteredMovies: []})})
   }
+
+  searchMovies = movieTitle => {
+    const { movies } = this.state;
+    console.log('movies state', {movies})
+    // Filter the movies based on the search query
+    const searchedMovies = movies.filter(movie =>
+        movie.title.toLowerCase().startsWith(movieTitle.toLowerCase())
+    );
+    
+    this.setState({ filteredMovies: searchedMovies});
+
+  };
 
   componentDidMount() {
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
     .then((response) => {
       if(!response.ok) {
-        this.setState({
-          error: "Server error. Our deepest apologizes. We are working on it.",
-        });
         throw Error(response.status)
       } else {
         return response.json()
       }
     })
     .then((data) => this.setState({movies: data.movies, individualMovie: {}}))
-    .catch(error => alert(`error at ${error}`))
+    .catch(error => this.setState({
+      error: `${error}`,
+    }))
   }
 
   render() {
+    console.log('on render', this.state.movies)
       return (
         <div>
           <Header error={this.state.error} individualMovie = {this.state.individualMovie}/>
           <Switch>
-            <Route exact path='/Movies' render={ () => (
+            <Route exact path='/movies' render={ () => (
             <>
-            <Form /> 
-            <Movies movies={this.state.movies} getMovieInfo = {this.getMovieInfo}/>
+            <Form searchMovies={this.searchMovies}/> 
+            <Movies movies={this.state.filteredMovies.length >= 1 ? this.state.filteredMovies : this.state.movies } getMovieInfo = {this.getMovieInfo}/>
             </>
             )} />
             <Route 
