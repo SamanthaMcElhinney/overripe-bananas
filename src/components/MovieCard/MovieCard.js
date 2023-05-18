@@ -4,6 +4,7 @@ import './MovieCard.css'
 import overripe from "../../assets/overripe.png"
 import ripe from "../../assets/ripe.png"
 import underripe from "../../assets/underripe.png"
+import { Link } from 'react-router-dom'
 
 const MovieCard = ({poster, title, release, rating, id, getMovieInfo}) => {
 
@@ -25,6 +26,7 @@ const MovieCard = ({poster, title, release, rating, id, getMovieInfo}) => {
     banana = underripe
 
     return (
+      <Link key={id} to={`/movies/${id}`}>
       <div className="movie" id={id} onClick={(event) => getMovieInfo(id)}>
       <img className="poster-image" src={poster} alt="movie poster" />
       <div className="movie-card-info">
@@ -36,6 +38,7 @@ const MovieCard = ({poster, title, release, rating, id, getMovieInfo}) => {
         </div>
       </div>
     </div>
+    </Link>
   );
 }
 
