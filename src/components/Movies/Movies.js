@@ -1,11 +1,11 @@
 import React from "react";
-import MovieCard from "./MovieCard";
+import MovieCard from "../MovieCard/MovieCard";
 import PropTypes from "prop-types";
 import "./Movies.css";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
-import ArrowBack from "./assets/right-arrow.png";
-import ArrowForward from "./assets/left-arrow.png";
+import ArrowBack from "../../assets/right-arrow.png";
+import ArrowForward from "../../assets/left-arrow.png";
 
 const responsive = {
   0: {
@@ -15,9 +15,13 @@ const responsive = {
     items: 2,
   },
   1024: {
-    items: 3,
+    items: 4,
     itemsFit: "contain",
   },
+  1840: {
+    items: 6, 
+    itemsFit: "contain"
+  }
 };
 
 function Movies({ movies, getMovieInfo }) {
