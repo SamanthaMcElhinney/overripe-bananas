@@ -18,6 +18,10 @@ class App extends Component {
     };
   }
 
+  clearIndividualMovie = () => {
+    this.setState({individualMovie:{}})
+  }
+
   getMovieInfo = (id) => {
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
       .then((response) => {
@@ -84,7 +88,7 @@ class App extends Component {
     console.log("on render", this.state.movies);
     return (
       <div>
-        <Header individualMovie={this.state.individualMovie} />
+        <Header individualMovie={this.state.individualMovie} clearIndividualMovie={this.clearIndividualMovie}/>
         {this.state.error && <p className="error-handling">{this.state.error}</p>}
         {this.state.searchError && <p>{this.state.searchError}</p>}
         <Switch>
