@@ -24,8 +24,9 @@ const responsive = {
   }
 };
 
-function Movies({ movies, getMovieInfo }) {
-  const movieCards = movies.map((movie) => (
+function Movies({ movies, getMovieInfo, filteredMovies }) {
+  const moviesToRender = filteredMovies.length > 0 ? filteredMovies : movies
+  const movieCards = moviesToRender.map((movie) => (
     <div className="item" data-value={movie.id} key={movie.id}>
       <MovieCard
         id={movie.id}
@@ -69,8 +70,8 @@ function Movies({ movies, getMovieInfo }) {
         items={movieCards}
         responsive={responsive}
         autoPlay={true}
-        autoPlayInterval={2000}
-        infinite={true}
+        autoPlayInterval={1000}
+        // infinite={true}
         keyboardNavigation={true}
         controlsStrategy="alternate"
         renderPrevButton={renderPrevButton}
