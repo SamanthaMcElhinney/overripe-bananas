@@ -3,7 +3,7 @@ describe("Main Page", () => {
     cy.intercept('GET', "https://rancid-tomatillos.herokuapp.com/api/v2/movies", {
       fixture: '/movies.json'
     })
-    cy.visit("http://localhost:3001")
+    cy.visit("http://localhost:3000")
   });
   it("should have a header with the title of the website", () => {
     cy.get("header")
@@ -14,7 +14,9 @@ describe("Main Page", () => {
       .should("have.length", 1);
   });
   it("should display all movies on the home page", () => {
-    cy.get(".movies-container").find(".poster-image").should("have.length", 3);
+    cy.get(".movies-container")
+      .find(".movie")
+      .should("have.length", 3);
   });
   it("should display the correct image in each movie card", () => {
     cy.get(".movie")
@@ -28,7 +30,7 @@ describe("Main Page", () => {
           )
           .get(".movie-title")
           .should("have.text", "Black Adam");
-        cy.get("img").should("have.attr", "alt", "Black Adam movie poster");
+        cy.get("img").should("have.attr", "alt", "movie poster");
       });
   })
   it("should display the correct release date in each movie card", () => {
@@ -53,16 +55,20 @@ describe("Main Page", () => {
   it("should allow a user to click on a movie and navigate to the details page", () => {
     cy.get(".movie").first().click()
     cy.url().should("include", "/436270");
-    // cy.url().should("not.eq", "http://localhost:3001");
+    cy.url().should("not.eq", "http://localhost:3000");
   })
   it("should display an error message if there's a server issue", () => {
     cy.intercept(
-        "GET",
-        "https://rancid-tomatillos.herokuapp.com/api/v2/movies", {
-          statusCode: 400,
-        }
-      )
-      .get(".error-header")
-      .contains("Server error. Our deepest apologizes. We are working on it.");
+      "GET",
+      "https://rancid-tomatillos.herokuapp.com/api/v2/movies",
+      {
+        statusCode: 400,
+      }
+    )
+      .get(".error-handling")
+      .should(
+        "have.text",
+        "Error: 400 Sorry we've slipped on a 🍌. We're working on getting back up and running"
+      );
   });
 });
