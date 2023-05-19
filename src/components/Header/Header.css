@@ -1,0 +1,43 @@
+header {
+  display: flex;
+  justify-content: center;
+  background-color: #BB641E;
+  align-items: center;
+}
+
+.headerImage{
+  display:flex;
+  height:100px;
+  width: 100px;
+}
+
+.headerOne {
+  margin-right: 20px;
+  color: #fede59;
+  font-family:'Kool Beans', sans-serif;
+}
+
+.headerTwo {
+  color: #FDBD59;
+  font-family:'Kool Beans', sans-serif;;
+}
+
+header h1{
+  font-size: 50px;
+}
+
+.home-button {
+  width: 113px;
+  height: 28px;
+  background-color: #fede59;
+  border-radius: 5px;
+  border-color: #fede59;
+  box-shadow: none;
+  cursor: pointer;
+  font-weight: bold;
+
+}
+
+.home-button:hover {
+  transform: skew(15deg, 1deg);
+}

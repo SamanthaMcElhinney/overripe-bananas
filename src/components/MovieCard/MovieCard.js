@@ -26,7 +26,7 @@ const MovieCard = ({poster, title, release, rating, id}) => {
     banana = underripe
 
     return (
-      <Link key={id} to={`/movies/${id}`}>
+      <Link key={id} to={`/movies/${id}`} style={{textDecoration: 'none'}}>
       <div className="movie" id={id} >
       <img className="poster-image" src={poster} alt="movie poster" />
       <div className="movie-card-info">

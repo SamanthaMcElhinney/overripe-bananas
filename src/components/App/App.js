@@ -85,7 +85,7 @@ class App extends Component {
   }
 
   render() {
-    console.log("on render", this.state.movies);
+    const { movies } = this.state
     return (
       <div>
         <Header individualMovie={this.state.individualMovie} clearIndividualMovie={this.clearIndividualMovie}/>

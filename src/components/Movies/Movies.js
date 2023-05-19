@@ -69,8 +69,8 @@ function Movies({ movies, getMovieInfo, filteredMovies }) {
         mouseTracking
         items={movieCards}
         responsive={responsive}
-        autoPlay={true}
-        autoPlayInterval={1000}
+        // autoPlay={true}
+        // autoPlayInterval={1000}
         // infinite={true}
         keyboardNavigation={true}
         controlsStrategy="alternate"

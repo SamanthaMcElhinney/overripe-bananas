@@ -22,15 +22,11 @@ input {
   height: 40px;
   color: black;
   background-color:   #fede59;
+  margin-right: 20px;
+  width: 200px;
+  font-weight: bold;
 }
 
-button {
-  width: 100px;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  flex-direction: column;
-}
 
 .click-img {
   margin-top:40px;
@@ -38,6 +34,3 @@ button {
   height:100px;
 }
 
-button:hover {
-    transform: skew(15deg, 1deg);
-}
