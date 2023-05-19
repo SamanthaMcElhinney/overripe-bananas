@@ -6,7 +6,6 @@ import MovieDetails from "../MovieDetails/MovieDetails";
 import Header from "../Header/Header"
 import { Route, Switch } from 'react-router-dom'
 
-
 class App extends Component {
   constructor() {
     super();
@@ -23,18 +22,19 @@ class App extends Component {
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
       .then((response) => {
         if (!response.ok) {
-          this.setState({
-            error:
-              "Server error. Our deepest apologizes. We are working on it.",
-          });
-          // throw Error(response.status)
+        throw new Error(response.status);
         } else {
           return response.json();
         }
       })
       .then((data) => {
-        this.setState({ individualMovie: data, filteredMovies: [] });
-      });
+        this.setState({ individualMovie: data, filteredMovies: [], error:""});
+      })
+      .catch((error) =>
+        this.setState({
+          error: `${error} Sorry we've slipped on a 🍌. We're working on getting back up and running`,
+        })
+      );
   };
 
   searchMovies = (movieTitle) => {
@@ -75,7 +75,7 @@ class App extends Component {
       )
       .catch((error) =>
         this.setState({
-          error: `${error}`,
+          error: `${error} Sorry we've slipped on a 🍌. We're working on getting back up and running`,
         })
       );
   }
@@ -85,23 +85,9 @@ class App extends Component {
     return (
       <div>
         <Header individualMovie={this.state.individualMovie} />
-        {/* {this.state.error && <p>{this.state.error}</p>} */}
+        {this.state.error && <p className="error-handling">{this.state.error}</p>}
         {this.state.searchError && <p>{this.state.searchError}</p>}
         <Switch>
-          <Route
-            exact
-            path="/movies"
-            render={() => (
-              <>
-                <Form searchMovies={this.searchMovies} />
-                <Movies
-                  movies={this.state.movies} 
-                  filteredMovies={this.state.filteredMovies}
-                  getMovieInfo={this.getMovieInfo}
-                />
-              </>
-            )}
-          />
           <Route
             exact
             path="/movies/:id"
@@ -109,15 +95,29 @@ class App extends Component {
               if (
                 this.state.individualMovie.movie?.id ===
                 parseInt(match.params.id)
-              ) {
-                return (
-                  <MovieDetails individualMovie={this.state.individualMovie} />
-                );
-              } else {
-                this.getMovieInfo(match.params.id);
-              }
-            }}
+                ) {
+                  return (
+                    <MovieDetails individualMovie={this.state.individualMovie} />
+                    );
+                  } else {
+                    this.getMovieInfo(match.params.id);
+                  }
+                }}
           />
+                <Route
+                  exact
+                  path="/"
+                  render={() => (
+                    <>
+                      <Form searchMovies={this.searchMovies} />
+                      <Movies
+                        movies={this.state.movies} 
+                        filteredMovies={this.state.filteredMovies}
+                        getMovieInfo={this.getMovieInfo}
+                      />
+                    </>
+                  )}
+                />
         </Switch>
       </div>
     );
