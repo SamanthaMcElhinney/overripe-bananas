@@ -4,10 +4,10 @@ import './Header.css'
 import { Link } from 'react-router-dom'
 import banana from "../../assets/banana.png"
 
-function Header({individualMovie}) {
+function Header({individualMovie, clearIndividualMovie}) {
   return (
       <header>
-        {Object.keys(individualMovie).length === 1 &&<Link to={'/movies'}><button className="home-button">Return Home</button></ Link>}
+        {Object.keys(individualMovie).length === 1 && <Link to={'/'}><button className="home-button" onClick={clearIndividualMovie}>Return Home</button></ Link>}
         <img className="headerImage"src={banana} alt="logo of a banana waving"/>
         <h1 className="headerOne">OVERRIPE</h1>
         <h1 className="headerTwo">BANANAS</h1>
