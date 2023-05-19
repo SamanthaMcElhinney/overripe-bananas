@@ -14,8 +14,8 @@ class App extends Component {
       movies: [],
       individualMovie: {},
       filteredMovies: [],
-
-      error: ''
+      error: '',
+      searchError: ''
     }
   }
 
@@ -42,50 +42,90 @@ class App extends Component {
     const searchedMovies = movies.filter(movie =>
         movie.title.toLowerCase().startsWith(movieTitle.toLowerCase())
     );
-    
-    this.setState({ filteredMovies: searchedMovies});
+      this.setState({ filteredMovies: searchedMovies});
 
+      if(!searchedMovies.length) {
+        this.setState({
+          searchError: (
+            <h3 style={{ color: "#fede59", fontSize: "large", textAlign:"center"}}>
+              No movies found. Please try again
+            </h3>
+          ),
+        });
+      } else {
+        this.setState({searchError: ''})
+      }
   };
 
   componentDidMount() {
-    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-    .then((response) => {
-      if(!response.ok) {
-        throw Error(response.status)
-      } else {
-        return response.json()
-      }
-    })
-    .then((data) => this.setState({movies: data.movies, individualMovie: {}}))
-    .catch(error => this.setState({
-      error: `${error}`,
-    }))
+    fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies/")
+      .then((response) => {
+        if (!response.ok) {
+          throw Error(response.status);
+        } else {
+          return response.json();
+        }
+      })
+      .then((data) =>
+        this.setState({ movies: data.movies, individualMovie: {} })
+      )
+      .catch((error) =>
+        this.setState({
+          error: (
+            <span style={{ color: "red", fontSize: "16px" }}>`${error}`</span>
+          ),
+        })
+      );
   }
 
   render() {
     console.log('on render', this.state.movies)
       return (
         <div>
-          <Header error={this.state.error} individualMovie = {this.state.individualMovie}/>
+          <Header
+            individualMovie={this.state.individualMovie}
+          />
+          {this.state.error && <p>{this.state.error}</p>}
+          {this.state.searchError && <p>{this.state.searchError}</p>}
           <Switch>
-            <Route exact path='/movies' render={ () => (
-            <>
-            <Form searchMovies={this.searchMovies}/> 
-            <Movies movies={this.state.filteredMovies.length >= 1 ? this.state.filteredMovies : this.state.movies } getMovieInfo = {this.getMovieInfo}/>
-            </>
-            )} />
-            <Route 
-              exact path='/movies/:id'
-              render={ ( {match} ) => {
-            if(this.state.individualMovie.movie?.id === parseInt(match.params.id)) {
-              return <MovieDetails  individualMovie= {this.state.individualMovie}/>
-            } else {
-              this.getMovieInfo(match.params.id)
-            }
-          }}/>
+            <Route
+              exact
+              path="/movies"
+              render={() => (
+                <>
+                  <Form searchMovies={this.searchMovies} />
+                  <Movies
+                    movies={
+                      this.state.filteredMovies.length >= 1
+                        ? this.state.filteredMovies
+                        : this.state.movies
+                    }
+                    getMovieInfo={this.getMovieInfo}
+                  />
+                </>
+              )}
+            />
+            <Route
+              exact
+              path="/movies/:id"
+              render={({ match }) => {
+                if (
+                  this.state.individualMovie.movie?.id ===
+                  parseInt(match.params.id)
+                ) {
+                  return (
+                    <MovieDetails
+                      individualMovie={this.state.individualMovie}
+                    />
+                  );
+                } else {
+                  this.getMovieInfo(match.params.id);
+                }
+              }}
+            />
           </Switch>
         </div>
-      )
+      );
     }
   }
 
