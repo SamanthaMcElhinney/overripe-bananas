@@ -1,4 +1,4 @@
-header {
+ header {
   display: flex;
   justify-content: center;
   align-content: space-between;
@@ -34,7 +34,7 @@ header h1{
   color:white;
 }
 
-.error-header {
+.error-handling {
   color: #fede59;
   font-size: 30px;
   display: flex;
