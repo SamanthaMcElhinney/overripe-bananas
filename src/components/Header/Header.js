@@ -12,9 +12,6 @@ function Header({individualMovie}) {
         <h1 className="headerOne">OVERRIPE</h1>
         <h1 className="headerTwo">BANANAS</h1>
       </header>
-      // {error && <p className="error-header">{error}</p>}
-      // <section className="main-page">
-      // </section>
     );
 }
 
