@@ -43,8 +43,6 @@ class App extends Component {
 
   searchMovies = (movieTitle) => {
     const { movies } = this.state;
-    console.log("movies state", { movies });
-    // Filter the movies based on the search query
     const searchedMovies = movies.filter((movie) =>
       movie.title.toLowerCase().startsWith(movieTitle.toLowerCase())
     );
@@ -90,7 +88,7 @@ class App extends Component {
       <div>
         <Header individualMovie={this.state.individualMovie} clearIndividualMovie={this.clearIndividualMovie}/>
         {this.state.error && <p className="error-handling">{this.state.error}</p>}
-        {this.state.searchError && <p>{this.state.searchError}</p>}
+        {this.state.searchError && <p className="search-error-handling">{this.state.searchError}</p>}
         <Switch>
           <Route
             exact
