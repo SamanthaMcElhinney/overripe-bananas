@@ -2,10 +2,6 @@ import React from "react";
 import PropTypes from 'prop-types'
 import './MovieDetails.css'
 
-
-
-
-
 function MovieDetails({ individualMovie}) {
 console.log(individualMovie)
 
@@ -16,7 +12,7 @@ console.log(individualMovie)
         <div className="opacity">
           <div className="content">
             <div className="ind-card">
-              <img className="ind-poster" src={individualMovie.movie.poster_path} alt="movie-poster"/>
+              <img className="ind-poster" src={individualMovie.movie.poster_path} alt={`${individualMovie.movie.title} movie-poster`}/>
             </div>
             <section className="movie-info">
               <h2 className="movie-info-title">{individualMovie.movie.title}</h2>
