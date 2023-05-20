@@ -1,63 +1,82 @@
-
 .movie-container {
-    float: left;
-    width: 100%;
-    position: relative;
-    display: block;
-    position: relative;
-    z-index: 90;
+  width: 100%;
+  position: relative;
+  display: block;
+  clear:both;
 }
 
 .overlay {
-    background-repeat:no-repeat;
-    height: 87vh;
-    filter: grayscale(100%); 
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: 0;
-
+  background-repeat: no-repeat;
+  height: 87vh;
+  filter: grayscale(100%);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 0;
 }
 
 .content {
-    display: flex;
-    justify-content: space-around;
-    position: absolute;
-    bottom:0;
-    z-index: 99;
-    left: 0;
-    padding: 40px;
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 0;
+  z-index: 99;
+  left: 0;
+  padding: 40px;
 }
 
 .ind-card {
-    display:flex;
-    justify-content: flex-end;
-    color:antiquewhite;
-    z-index: 5;
+  display: flex;
+  justify-content: flex-end;
+  color: antiquewhite;
+  z-index: 5;
 }
 
 .ind-poster {
-    display:flex;
-    height: 440px;
-    width: 280px;
-} 
+  display: flex;
+  height: 440px;
+  width: 280px;
+}
 
 .movie-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 400px;
-    width: 600px;
-    background-color: white;
-    color: black;
-    align-items: center;
-    flex-wrap: nowrap;
-    padding: 20px;
-    margin-left: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 400px;
+  width: 600px;
+  background-color: white;
+  color: black;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 20px;
+  margin-left: 0px;
 }
 
 .detail-list {
-    list-style: none;
-    color: black;
-} 
+  list-style: none;
+  color: black;
+}
 
+@media screen and (max-width: 768px) {
+  .content {
+    max-height: 90vh;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .ind-poster {
+    height: auto;
+    width: 90%;
+  }
+
+  .movie-info {
+    width: 90%;
+    margin-left: 0;
+    padding: 10px;
+    text-align: center;
+  }
+}
