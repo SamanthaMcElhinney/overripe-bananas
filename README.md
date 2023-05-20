@@ -54,7 +54,7 @@ This was our first paired project during Mod 3 at [Turing School of Software and
 
 ## Goals and Challenges 
 - In our first React project, we aimed to gain competency with React fundamentals and create a multi-page UX using Router. We successfully completed all project iterations, which included adding search functionality and ensuring a responsive design for various screen sizes.
-- We faced a learning curve for correclty implementing routes to navigate between different pages and ensuring the appropriate display of movie details when returning to the home page.
+- We faced a learning curve for correctly implementing routes to navigate between different pages and ensuring the appropriate display of movie details when returning to the home page.
 - Challenges in handling asynchronous code, including managing data flow and ensuring correct execution order.
 - Overcoming the learning curve associated with Cypress testing, while ensuring comprehensive test coverage for various user interactions.
 
