@@ -23,7 +23,7 @@ header {
 }
 
 header h1{
-  font-size: 50px;
+  font-size: 3rem;
 }
 
 .home-button {
@@ -35,9 +35,38 @@ header h1{
   box-shadow: none;
   cursor: pointer;
   font-weight: bold;
-
 }
 
 .home-button:hover {
-  transform: skew(15deg, 1deg);
+  transform: translateY(-10px);
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    display: flex;
+    justify-content: center;
+    background-color: #BB641E;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .headerOne {
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+
+  .headerImage {
+    width: 70px;
+    height: 70px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .home-button {
+    width: 100px;
+    height: 24px;
+  }
 }
