@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import Form from "../Form/Form"
 import Movies from '../Movies/Movies'
 import './App.css';
-import MovieDetails from "../MovieDetails/MovieDetails";
+import MovieDetails from "../MovieDetails/MovieDetails"
 import Header from "../Header/Header"
 import { Route, Switch } from 'react-router-dom'
 
@@ -137,7 +137,7 @@ class App extends Component {
                 />
         </Switch>
       </div>
-    );
+    )
   }
 }
 

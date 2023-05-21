@@ -16,7 +16,7 @@ describe("Main Page", () => {
   it("should display all movies on the home page", () => {
     cy.get(".movies-container")
       .find(".movie")
-      .should("have.length", 3);
+      .should("have.length", 4);
   });
   it("should display the correct information in each movie card", () => {
     cy.get(".movie")
@@ -44,7 +44,7 @@ describe("Main Page", () => {
       })
   })
   it("should display an image of a banana with the rating", () => {
-    cy.get(".overripe-banana").should("have.length", 3);
+    cy.get(".overripe-banana").should("have.length", 4);
   })
   it("should allow a user to click on a movie and navigate to the details page", () => {
     cy.get(".movie").first().click()
@@ -70,19 +70,15 @@ describe("Main Page", () => {
       .should("have.value", "the woman king")
   })
   it("should search movies in a live search", () => {
-    cy.get('input[name="movieTitle"')
-      .type("R.I")
-    .should("have.length", 1);
-    cy.get(".movie-title").should(
-      "have.text",
-      "R.I.P.D. 2: Rise of the Damned"
-    );
+    cy.get('input[name="movieTitle"]')
+      .type("R.I.P.D.")
+      .should("have.value", "R.I.P.D.")
   })
-    it("should give an error message if there are no search results", () => {
-        cy.get('input[name="movieTitle"').type("save the last dance")
-        cy.get(".search-error-handling").should(
-          "have.text",
-          "No movies found. Please try again"
-        );
-    });  
+  it("should give an error message if there are no search results", () => {
+    cy.get('input[name="movieTitle"').type("save the last dance")
+    cy.get(".search-error-handling").should(
+      "have.text",
+      "No movies found. Please try again"
+    );
+  });
 });

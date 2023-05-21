@@ -1,11 +1,11 @@
-import React from "react";
-import MovieCard from "../MovieCard/MovieCard";
-import PropTypes from "prop-types";
-import "./Movies.css";
-import AliceCarousel from "react-alice-carousel";
-import "react-alice-carousel/lib/alice-carousel.css";
-import ArrowBack from "../../assets/right-arrow.png";
-import ArrowForward from "../../assets/left-arrow.png";
+import React from "react"
+import MovieCard from "../MovieCard/MovieCard"
+import PropTypes from "prop-types"
+import "./Movies.css"
+import AliceCarousel from "react-alice-carousel"
+import "react-alice-carousel/lib/alice-carousel.css"
+import ArrowBack from "../../assets/right-arrow.png"
+import ArrowForward from "../../assets/left-arrow.png"
 
 const responsive = {
   0: {
@@ -22,7 +22,7 @@ const responsive = {
     items: 6, 
     itemsFit: "contain"
   }
-};
+}
 
 function Movies({ movies, getMovieInfo, filteredMovies }) {
   const moviesToRender = filteredMovies.length > 0 ? filteredMovies : movies
@@ -37,7 +37,7 @@ function Movies({ movies, getMovieInfo, filteredMovies }) {
         getMovieInfo={getMovieInfo}
       />
     </div>
-  ));
+  ))
 
   const renderNextButton = () => {
     return (
@@ -48,8 +48,8 @@ function Movies({ movies, getMovieInfo, filteredMovies }) {
           style={{ width: "20px", height: "60px", width: "60px" }}
         />
       </div>
-    );
-  };
+    )
+  }
 
   const renderPrevButton = () => {
     return (
@@ -60,30 +60,29 @@ function Movies({ movies, getMovieInfo, filteredMovies }) {
           style={{ width: "20px", height: "60px", width: "60px" }}
         />
       </div>
-    );
-  };
-
+    )
+  }
+  
   return (
     <div className="movies-container">
       <AliceCarousel
         mouseTracking
         items={movieCards}
         responsive={responsive}
-        // autoPlay={true}
-        // autoPlayInterval={1000}
-        // infinite={true}
+        autoPlay={true}
+        autoPlayInterval={1000}
         keyboardNavigation={true}
         controlsStrategy="alternate"
         renderPrevButton={renderPrevButton}
         renderNextButton={renderNextButton}
       />
     </div>
-  );
+  )
 }
 
-export default Movies;
+export default Movies
 
 Movies.propTypes = {
   movies: PropTypes.array,
   getMovieInfo: PropTypes.func.isRequired,
-};
+}

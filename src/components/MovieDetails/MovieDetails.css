@@ -53,14 +53,18 @@
 }
 
 .movie-info-title {
-  margin: 0
+  margin: 0;
+  font-size: 1.5rem;
 }
+
 .movie-tagline {
-  margin-top: 3px
+  margin-top: 3px;
+  font-size: 1rem;
 }
 
 .movie-overview {
-  margin: 5px 0px
+  margin: 5px 0px;
+  font-size: .85rem;
 }
 
 .revenue, .budget, .runtime {
@@ -68,6 +72,7 @@
 }
 
 .stats {
+  font-size: .90rem;
   margin-top: 0px;
   width: 100%;
   display: flex;
@@ -76,7 +81,7 @@
 }
 
 .stats-title {
-  margin-bottom: 5px
+  margin-bottom: 5px;
 }
 
 .stats-title:before {
@@ -84,7 +89,7 @@
   height: 1.1em;
   content: '';
   border-left: 3px solid orange;
-  margin: -1px 6px 0 -9px
+  margin: -1px 6px 0 -9px;
 }
 
 .trailer-container {

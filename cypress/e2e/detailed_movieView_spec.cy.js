@@ -26,15 +26,21 @@ describe('Detailed Movie Card', () => {
         cy.get('.stats')
         cy.contains("Revenue:").should("have.text", "Revenue: $384,571,691");
         cy.contains("Budget:").should(
-          "have.text",'Budget: $200,000,000'
+            "have.text", 'Budget: $200,000,000'
         );
     });
-    //    it("should display the movie details for the selected movie", () => {
-    //     cy.get(".opacity").find(".ind-card")
-    //       .should(
-    //         "have.attr",
-    //         "src",
-    //         "https://image.tmdb.org/t/p/original//bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg"
-    //       );
-    //    });
+       it("should display the movie image for the selected movie", () => {
+        cy.get(".ind-poster").should(
+          "have.attr",
+          "src",
+          "https://image.tmdb.org/t/p/original//pFlaoHTZeyNkG83vxsAJiGzfSsa.jpg"
+        );
+       });
+       it("should display a video preview for the selected movie", () => {
+        cy.get(".trailer").should(
+          "have.attr",
+          "src",
+          "https://www.youtube.com/embed/mkomfZHG5q4"
+        );
+       })
 })
