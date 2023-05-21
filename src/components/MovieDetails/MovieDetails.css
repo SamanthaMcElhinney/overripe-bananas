@@ -42,7 +42,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 400px;
+  height: 500px;
   width: 600px;
   background-color: white;
   color: black;
@@ -51,10 +51,21 @@
   padding: 20px;
   margin-left: 0px;
 }
+.stats{
+  font-size: .75rem;
+}
 
 .detail-list {
   list-style: none;
   color: black;
+}
+
+.movie-overview {
+  display:flex;
+}
+
+.trailer-video {
+  display: flex;
 }
 
 @media screen and (max-width: 768px) {
@@ -82,6 +93,5 @@
     display: flex;
     max-height: 40vh;
     font-size: .75rem;
-
   }
 }
