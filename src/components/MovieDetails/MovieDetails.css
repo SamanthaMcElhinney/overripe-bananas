@@ -50,17 +50,21 @@
   flex-wrap: nowrap;
   padding: 20px;
   margin-left: 0px;
+
 }
 
 .movie-info-title {
-  margin: 0
+  margin: 0;
+  font-size: 1.5rem;
 }
 .movie-tagline {
-  margin-top: 3px
+  margin-top: 3px;
+  font-size: 1rem;
 }
 
 .movie-overview {
-  margin: 5px 0px
+  margin: 5px 0px;
+  font-size: .85rem;
 }
 
 .revenue, .budget, .runtime {
@@ -68,6 +72,7 @@
 }
 
 .stats {
+  font-size: .90rem;
   margin-top: 0px;
   width: 100%;
   display: flex;
