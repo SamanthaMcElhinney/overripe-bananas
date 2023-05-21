@@ -13,6 +13,7 @@ class App extends Component {
       movies: [],
       individualMovie: {},
       filteredMovies: [],
+      movieTrailer: [],
       error: "",
       searchError: "",
     };
@@ -40,6 +41,25 @@ class App extends Component {
         })
       );
   };
+
+  getMovieTrailer = (id) => {
+  fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}/videos`)
+  .then((response) => {
+    if(!response.ok) {
+      throw new Error(response.status)
+    } else {
+      return response.json()
+    }
+  })
+  .then((data) => {
+        this.setState({ movieTrailer: data.videos.find(video => video.type === 'Trailer')})
+      })
+      .catch((error) => 
+        this.setState({
+          error: `${error} Sorry we've slipped on a 🍌. We're working on getting back up and running` 
+        })
+      )
+    }
 
   searchMovies = (movieTitle) => {
     const { movies } = this.state;
@@ -94,22 +114,17 @@ class App extends Component {
             exact
             path="/movies/:id"
             render={({ match }) => {
-              if (
-                this.state.individualMovie.movie?.id ===
-                parseInt(match.params.id)
-                ) {
+              if (this.state.individualMovie.movie?.id === parseInt(match.params.id)) {
                   return (
-                    <MovieDetails individualMovie={this.state.individualMovie} />
+                    <MovieDetails individualMovie={this.state.individualMovie} movieTrailer={this.state.movieTrailer} />
                     );
                   } else {
                     this.getMovieInfo(match.params.id);
+                    this.getMovieTrailer(match.params.id)
                   }
-                }}
-          />
+                }}/>
                 <Route
-                  exact
-                  path="/"
-                  render={() => (
+                  exact path="/" render={() => (
                     <>
                       <Form searchMovies={this.searchMovies} />
                       <Movies

@@ -2,8 +2,7 @@ import React from "react";
 import PropTypes from 'prop-types'
 import './MovieDetails.css'
 
-function MovieDetails({ individualMovie}) {
-console.log(individualMovie)
+function MovieDetails({ individualMovie, movieTrailer}) {
 
   return (
       <div className="movie-container">
@@ -19,17 +18,19 @@ console.log(individualMovie)
               <h3 className="movie-tagline">"{individualMovie.movie.tagline}"</h3>
               <p className="movie-overview">{individualMovie.movie.overview}</p>
               <section className="stats">
-                <h3>Revenue: ${individualMovie.movie.revenue.toLocaleString("en-US")}</h3>
-                <h3>Budget: ${individualMovie.movie.budget.toLocaleString("en-US")}</h3>
-                <h3>Runtime: {individualMovie.movie.runtime} minutes</h3>
+                <h3 className="stats-title">Movie Stats</h3>
+                <p className="revenue">Revenue: ${individualMovie.movie.revenue.toLocaleString("en-US")}</p>
+                <p className="budget">Budget: ${individualMovie.movie.budget.toLocaleString("en-US")}</p>
+                <p className="runtime">Runtime: {individualMovie.movie.runtime} minutes</p>
               </section>
+            <div className="trailer-container">
+              <iframe className="trailer" src={`https://www.youtube.com/embed/${movieTrailer.key}`} title="Black Adam - Official Trailer 2" border="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+            </div>
             </section>
           </div>
         </div>
       </div>
   );
-
-
 }
 
 export default MovieDetails;

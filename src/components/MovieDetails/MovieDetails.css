@@ -52,9 +52,46 @@
   margin-left: 0px;
 }
 
-.detail-list {
-  list-style: none;
-  color: black;
+.movie-info-title {
+  margin: 0
+}
+.movie-tagline {
+  margin-top: 3px
+}
+
+.movie-overview {
+  margin: 5px 0px
+}
+
+.revenue, .budget, .runtime {
+  margin: 0
+}
+
+.stats {
+  margin-top: 0px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stats-title {
+  margin-bottom: 5px
+}
+
+.stats-title:before {
+  position: relative;
+  height: 1.1em;
+  content: '';
+  border-left: 3px solid orange;
+  margin: -1px 6px 0 -9px
+}
+
+.trailer-container {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  justify-content: center;
 }
 
 @media screen and (max-width: 768px) {
@@ -82,6 +119,5 @@
     display: flex;
     max-height: 40vh;
     font-size: .75rem;
-
   }
 }
