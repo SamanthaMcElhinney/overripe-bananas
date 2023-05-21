@@ -20,11 +20,11 @@ header {
 .headerTwo {
   color: #fede59; 
   font-family:'Kool Beans', sans-serif;;
-}
+};
 
 header h1{
   font-size: 3rem;
-}
+};
 
 .home-button {
   width: 113px;

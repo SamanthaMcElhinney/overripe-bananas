@@ -54,10 +54,10 @@ function MovieDetails({ individualMovie, movieTrailer}) {
       </div>
     </div>
   );
-}
+};
 
 export default MovieDetails;
 
 MovieDetails.propTypes = {
   individualMovie: PropTypes.object.isRequired
-}
+};

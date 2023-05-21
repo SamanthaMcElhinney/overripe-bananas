@@ -1,8 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import './Header.css'
-import { Link } from 'react-router-dom'
-import banana from "../../assets/banana.png"
+import React from 'react';
+import PropTypes from 'prop-types';
+import './Header.css';
+import { Link } from 'react-router-dom';
+import banana from "../../assets/banana.png";
 
 function Header({individualMovie, clearIndividualMovie}) {
   return (
@@ -13,12 +13,12 @@ function Header({individualMovie, clearIndividualMovie}) {
         <h1 className="headerTwo">BANANAS</h1>
       </header>
     );
-}
+};
 
 
 
-export default Header
+export default Header;
 
 Header.propTypes = {
   individualMovie:PropTypes.object.isRequired
-}
+};

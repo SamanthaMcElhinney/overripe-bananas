@@ -8,9 +8,6 @@ class Form extends Component {
       movieTitle: ''
     }
   }
-  // handleChange = event => {
-  //   this.setState({ [event.target.name]: event.target.value})
-  // }
 
   handleChange = event => {
     const movieTitle = event.target.value;

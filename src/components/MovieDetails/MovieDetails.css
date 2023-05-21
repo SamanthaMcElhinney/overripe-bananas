@@ -50,13 +50,13 @@
   flex-wrap: nowrap;
   padding: 20px;
   margin-left: 0px;
-
 }
 
 .movie-info-title {
   margin: 0;
   font-size: 1.5rem;
 }
+
 .movie-tagline {
   margin-top: 3px;
   font-size: 1rem;
@@ -81,7 +81,7 @@
 }
 
 .stats-title {
-  margin-bottom: 5px
+  margin-bottom: 5px;
 }
 
 .stats-title:before {
@@ -89,7 +89,7 @@
   height: 1.1em;
   content: '';
   border-left: 3px solid orange;
-  margin: -1px 6px 0 -9px
+  margin: -1px 6px 0 -9px;
 }
 
 .trailer-container {
