@@ -23,8 +23,9 @@ class Form extends Component {
       <form>
         <input
           type="text"
+          id="movieTitle"
           placeholder="Search Favorite Movie"
-          className='search'
+          className="search"
           role="search"
           name="movieTitle"
           value={this.state.movieTitle}

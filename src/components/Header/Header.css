@@ -13,17 +13,17 @@ header {
 
 .headerOne {
   margin-right: 20px;
-  color: #fede59;
+  color: #fff925;
   font-family:'Kool Beans', sans-serif;
 }
 
 .headerTwo {
-  color: #FDBD59;
+  color: #fede59; 
   font-family:'Kool Beans', sans-serif;;
 }
 
 header h1{
-  font-size: 50px;
+  font-size: 3rem;
 }
 
 .home-button {
@@ -39,5 +39,38 @@ header h1{
 }
 
 .home-button:hover {
-  transform: skew(15deg, 1deg);
+  transform: skew(10deg, 1deg);
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    display: flex;
+    justify-content: center;
+    background-color: #BB641E;
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .headerOne {
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+
+  .headerImage {
+    width: 70px;
+    height: 70px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+
+  .home-button {
+    margin-left:10px;
+    max-width: 90px;
+    max-height: 24px;
+    font-size: .65rem;
+  }
 }

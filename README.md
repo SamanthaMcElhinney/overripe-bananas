@@ -18,13 +18,13 @@ Overripe Bananas is a web-based application designed to allow users to view an a
  - In the new terminal tab, run `npm start`.
  - Once WebPack has compiled the necessary resources, you will see a link within the text of your terminal. You can copy and paste that link into your browser to access a locally-hosted version of this application on your machine. 
 
+## Deployed Page
+- [Deployed Link](https://overripe-bananas.vercel.app/)
 ---
 
 ## Preview
 
 ![Overripe_bananas](https://github.com/SamanthaMcElhinney/overripe-bananas/assets/117230717/6964f2d0-69f4-4945-89d4-c1c39a9ffc8e)
-
-
 
 ---
 
@@ -40,7 +40,29 @@ This was our first paired project during Mod 3 at [Turing School of Software and
 
 ---
 
-## Goals and Challenges 
+## Technologies/ Metholodologies
+- React & React Router
+- End to end testing using Cypress
+- Fetch API
+- Git/GitHub/ GitHub project board
+- Javascript/ CSS/ HTML
+- Error handling for network and user errors
+- Data validation with PropTypes
+- Utilizing Agile/ Scrum project management
+- Develop user stories and with acceptance criteria 
+- Responsive design
 
+## Goals and Challenges 
+- In our first React project, we aimed to gain competency with React fundamentals and create a multi-page UX using Router. We successfully completed all project iterations, which included adding search functionality and ensuring a responsive design for various screen sizes.
+- incorporating accessibility features with app 100% accessible via lighthouse audit to ensure a more inclusive user experience.
+- We faced a learning curve for correctly implementing routes to navigate between different pages and ensuring the appropriate display of movie details when returning to the home page.
+- Challenges in handling asynchronous code, including managing data flow and ensuring correct execution order.
+- Overcoming the learning curve associated with Cypress testing, while ensuring comprehensive test coverage for various user interactions.
 
 ## Future Development Opportunities
+- Implement a user authentication system to secure user accounts and enable personalized experiences. 
+- Expand the search functionality by incorporating genre as a search criterion. 
+- Develop features that enable users to mark movies as favorites and provide ratings. This will allow users to curate their own list of favorite movies and help personalize their movie recommendations.
+- Implement a section that displays the movies recently viewed by the user.
+- Enhance the user experience by incorporating video previews for movies. 
+- Build our own API using Express.js to have more control over the data and customize it to meet specific needs.
