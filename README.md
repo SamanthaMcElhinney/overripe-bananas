@@ -3,6 +3,13 @@ Overripe Bananas is a web-based application designed to allow users to view an a
 
 ---
 
+## Contributors
+
+Dustin Gouner  [GitHub](https://github.com/dustingouner) | [LinkedIn](https://www.linkedin.com/in/dustin-gouner/) <br>
+Samantha McElhinney [GitHub](https://github.com/samanthamcelhinney) | [LinkedIn](https://www.linkedin.com/in/samantha-mcelhinney/)
+
+---
+
 ## Set Up 
 
 ### Installing the files
@@ -25,13 +32,6 @@ Overripe Bananas is a web-based application designed to allow users to view an a
 ## Preview
 
 ![Overripe_bananas](https://github.com/SamanthaMcElhinney/overripe-bananas/assets/117230717/6964f2d0-69f4-4945-89d4-c1c39a9ffc8e)
-
----
-
-## Contributors
-
-Dustin Gouner  [GitHub](https://github.com/dustingouner) | [LinkedIn](https://www.linkedin.com/in/dustin-gouner/) <br>
-Samantha McElhinney [GitHub](https://github.com/samanthamcelhinney) | [LinkedIn](https://www.linkedin.com/in/samantha-mcelhinney/)
 
 ---
 
