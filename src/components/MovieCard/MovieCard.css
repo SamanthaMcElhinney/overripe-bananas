@@ -1,5 +1,5 @@
 .movie {
-    display: grid;
+    /* display: grid; */
     grid-template-rows: min-content;
     gap: var(--size-3 );
     padding: 20px;
