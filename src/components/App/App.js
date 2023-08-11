@@ -33,7 +33,7 @@ class App extends Component {
         }
       })
       .then((data) => {
-        this.setState({ individualMovie: data, filteredMovies: [], error:""});
+        this.setState({ individualMovie: data, filteredMovies: [], error:"", searchError:""});
       })
       .catch((error) =>
         this.setState({

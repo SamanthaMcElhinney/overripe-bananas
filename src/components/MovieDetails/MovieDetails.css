@@ -99,9 +99,10 @@
   justify-content: center;
 }
 
- 
-
 @media screen and (max-width: 844px) {
+    .ind-poster {
+    display: none;
+  }
 
   .overlay {
     background-repeat: no-repeat;
@@ -118,7 +119,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0px;
+    padding: 20px;
     height: 95vh;
   }
 

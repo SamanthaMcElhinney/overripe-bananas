@@ -37,3 +37,14 @@
     display: flex;
     flex-direction: row;
 }
+
+@media only screen and (max-width: 768px) {
+    .movie-info {
+        text-align: center; /* This assumes movie-info needs horizontal centering */
+        margin: 0 auto; /* This can help with horizontal centering if it's a block-level element */
+        /* Add any other styles needed to center movie-info on mobile here */
+          display: flex;
+  flex-direction: column;
+  align-content: center;
+    }
+}
