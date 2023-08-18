@@ -40,6 +40,9 @@ This was our first paired project during Mod 3 at [Turing School of Software and
 
 ---
 
+## Accessibility Score
+<img width="1439" alt="OB-acc-score" src="https://github.com/SamanthaMcElhinney/overripe-bananas/assets/115356592/e9c37604-5fe4-499d-95fc-08a8e303962b">
+
 ## Technologies/ Metholodologies
 - React & React Router
 - End to end testing using Cypress
